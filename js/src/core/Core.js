@@ -913,6 +913,8 @@ function K3D(provider, targetDOMNode, parameters) {
 
         listeners = {};
         currentWindow.removeEventListener('resize', this.resizeHelper);
+        world.renderer.removeContextLossListener();
+        world.renderer.forceContextLoss();
     };
 
     world.targetDOMNode.appendChild(world.overlayDOMNode);
